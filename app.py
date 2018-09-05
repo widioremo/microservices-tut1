@@ -1,7 +1,10 @@
-from connexion.resolver import RestyResolver
 import connexion
+from connexion.resolver import RestyResolver
+
 
 if __name__ == '__main__':
     app = connexion.App(__name__, 9090, specification_dir='swagger/')
     app.add_api('my_super_app.yaml', resolver=RestyResolver('api'))
-    app.run(host='0.0.0.0', debug=True,threaded=True)
+    # app.add_api('my_super_app.yaml')
+    # app.run(host='0.0.0.0', debug=True,threaded=True)
+    app.run()

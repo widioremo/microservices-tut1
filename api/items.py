@@ -1,5 +1,5 @@
 items = {
-    0: {"name": "First item"}
+    0: {"name": "First item"},
 }
 
 
