@@ -16,6 +16,7 @@ def configure(binder: Binder) -> Binder:
 if __name__ == '__main__':
     app = connexion.FlaskApp(__name__, port=9090, specification_dir='swagger/')
     app.add_api('my_super_app.yaml', resolver=RestyResolver('api'))
+    FlaskInjector(app=app.app, modules=[configure])
     # app.add_api('my_super_app.yaml')
     app.run(host='0.0.0.0', debug=True,threaded=True)
     # app.run()
